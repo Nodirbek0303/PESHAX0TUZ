@@ -1,0 +1,28 @@
+# Render.com — SmartCross AI backend (admin API + dashboard)
+# Dashboard: https://dashboard.render.com → New Blueprint → repo ulang
+services:
+  - type: web
+    name: peshax0t-api
+    runtime: python
+    rootDir: backend
+    plan: free
+    buildCommand: pip install -r requirements-minimal.txt
+    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    healthCheckPath: /api/v1/health
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.11.9"
+      - key: USE_WEBCAM
+        value: "false"
+      - key: INFERENCE_MODE
+        value: gpu
+      - key: SECURITY_ENVIRONMENT
+        value: production
+      - key: SECURITY_ENABLE_DOCS
+        value: "false"
+      - key: CORS_ORIGINS
+        value: '["https://peshax0t.vercel.app","http://localhost:5173"]'
+      - key: ADMIN_PASSWORD
+        sync: false
+      - key: SECURITY_SECRET_KEY
+        generateValue: true

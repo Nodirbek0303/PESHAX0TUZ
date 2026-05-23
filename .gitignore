@@ -1,0 +1,15 @@
+.env
+.env.local
+.env.production
+backend/.env
+frontend/.env
+*.pyc
+__pycache__/
+node_modules/
+dist/
+frontend/dist/
+.pytest_cache/
+*.pt
+backend/app/data/security_audit.log
+.env.vercel.local
+.vercel

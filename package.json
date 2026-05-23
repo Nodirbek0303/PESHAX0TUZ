@@ -1,0 +1,10 @@
+{
+  "private": true,
+  "name": "peshax0t",
+  "version": "1.0.0",
+  "description": "SmartCross AI — Vercel faqat frontend (React) uchun",
+  "scripts": {
+    "build": "npm --prefix frontend ci && npm --prefix frontend run build",
+    "vercel-build": "npm --prefix frontend ci && npm --prefix frontend run build"
+  }
+}
