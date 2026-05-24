@@ -10,6 +10,9 @@
       "source": "/api/:path*",
       "destination": "https://evil-kings-melt.loca.lt/api/:path*"
     },
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    {
+      "source": "/((?!api/).*)",
+      "destination": "/index.html"
+    }
   ]
 }
