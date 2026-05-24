@@ -63,6 +63,7 @@ class Settings(BaseSettings):
         "http://localhost:5174",
         "http://localhost:3000",
         "https://peshax0t.vercel.app",
+        "https://peshax0tuz.vercel.app",
     ]
 
 

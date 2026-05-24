@@ -9,7 +9,4 @@ passlib[bcrypt]==1.7.4
 bcrypt==4.2.1
 numpy==2.2.1
 opencv-python-headless==4.10.0.84
-PyJWT==2.10.1
-passlib[bcrypt]==1.7.4
-bcrypt==4.2.1
 httpx==0.28.1

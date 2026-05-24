@@ -1,13 +1,22 @@
-# Render.com — SmartCross AI backend (admin API + dashboard)
-# Dashboard: https://dashboard.render.com → New Blueprint → repo ulang
+# Render.com — SmartCross AI BACKEND (Python FastAPI)
+# MUHIM: Frontend Vercel da. Render faqat backend API uchun.
+#
+# O'rnatish:
+# 1. https://dashboard.render.com → New → Blueprint
+# 2. GitHub repo: Nodirbek0303/PESHAX0TUZ
+# 3. render.yaml avtomatik o'qiladi
+# 4. ADMIN_PASSWORD = 404-UZ_TEAM kiriting
+# 5. Deploy tugagach URL: https://peshax0t-api.onrender.com
+# 6. Vercel vercel.json da tunnel o'rniga Render URL qo'ying
+
 services:
   - type: web
     name: peshax0t-api
     runtime: python
-    rootDir: backend
     plan: free
+    rootDir: backend
     buildCommand: pip install -r requirements-minimal.txt
-    startCommand: uvicorn app.main:app --host 0.0.0.0 --port $PORT
+    startCommand: python -m uvicorn app.main:app --host 0.0.0.0 --port $PORT
     healthCheckPath: /api/v1/health
     envVars:
       - key: PYTHON_VERSION
@@ -21,7 +30,7 @@ services:
       - key: SECURITY_ENABLE_DOCS
         value: "false"
       - key: CORS_ORIGINS
-        value: '["https://peshax0t.vercel.app","http://localhost:5173"]'
+        value: '["https://peshax0tuz.vercel.app","https://peshax0t.vercel.app","http://localhost:5173"]'
       - key: ADMIN_PASSWORD
         sync: false
       - key: SECURITY_SECRET_KEY

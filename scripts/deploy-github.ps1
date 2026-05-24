@@ -23,8 +23,15 @@ $user = (& $Gh api user -q .login)
 $repo = "PESHAX0TUZ"
 $full = "$user/$repo"
 
-& $Gh repo view $full 2>$null | Out-Null
-if ($LASTEXITCODE -ne 0) {
+$repoExists = $false
+try {
+    & $Gh repo view $full 2>$null | Out-Null
+    if ($LASTEXITCODE -eq 0) { $repoExists = $true }
+} catch {
+    $repoExists = $false
+}
+
+if (-not $repoExists) {
     Write-Host "Repo yaratilmoqda: $repo ..." -ForegroundColor Yellow
     & $Gh repo create $repo --public --description "SmartCross AI pedestrian monitoring" --source=. --remote=origin --push
 } else {
